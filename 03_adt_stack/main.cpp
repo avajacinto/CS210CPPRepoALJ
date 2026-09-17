@@ -8,18 +8,19 @@
 #include "Stack.h"
 
 int main() {
-    Stack s;
+    Stack stack;
 
-    s.push(10);
-    s.push(20);
-    s.push(30);
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
 
-    std::cout << "Stack size: " << s.size() << std::endl;
-    std::cout << "Top: " << s.top() << std::endl;
+    std::cout << "Stack size: " << stack.size() << std::endl;
+    std::cout << "Top: " << stack.peek() << std::endl;
 
-    s.pop();
-    std::cout << "After pop, top: " << s.top() << std::endl;
-    std::cout << "Is empty? " << (s.isEmpty() ? "yes" : "no") << std::endl;
+    std::cout << "Popped: " << stack.pop() << std::endl;
+
+
+
 
     return 0;
 }

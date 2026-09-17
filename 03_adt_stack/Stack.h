@@ -9,16 +9,18 @@
 // This header is the ADT's public face: the operations, and nothing
 // about how they're carried out.
 
-#pragma once
-
-#include <vector>
+#ifndef STACK_H
+#define STACK_H
 
 class Stack {
 public:
+    Stack();
+
     void push(int value);   // add to the top
-    void pop();              // remove the top (does nothing if empty)
-    int top() const;         // look at the top without removing it
+    int pop();              // remove the top (does nothing if empty)
+    int peek() const;         // look at the top without removing it
     bool isEmpty() const;
+    bool isFull() const;
     int size() const;
 
 private:
@@ -28,5 +30,8 @@ private:
     // list next semester, every .cpp file that #includes this header
     // and only calls push/pop/top/isEmpty/size doesn't need to change
     // at all.
-    std::vector<int> data_;
+    int data[100];
+    int topIndex;
 };
+
+#endif
